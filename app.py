@@ -36,7 +36,7 @@ except ImportError:  # Local fallback keeps the app usable without the optional 
 # =============================================================================
 
 st.set_page_config(
-    page_title="Wall Assembly Embodied Carbon Calculator",
+    page_title="Wall-E",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -1845,7 +1845,7 @@ def comparison_report_bytes() -> bytes:
         topMargin=0.42 * inch,
         bottomMargin=0.42 * inch,
         title="Wall Assembly Embodied Carbon Report",
-        author="Wall Assembly Embodied Carbon Calculator",
+        author="Wall-E",
     )
 
     styles = getSampleStyleSheet()
@@ -2129,7 +2129,7 @@ def comparison_report_bytes() -> bytes:
         canvas.line(doc.leftMargin, 20, landscape(letter)[0] - doc.rightMargin, 20)
         canvas.setFont("Helvetica", 7)
         canvas.setFillColor(rl_colors.HexColor(COLORS["muted"]))
-        canvas.drawString(doc.leftMargin, 9, "Wall Assembly Embodied Carbon Calculator - A1-A3 report")
+        canvas.drawString(doc.leftMargin, 9, "Wall-E - A1-A3 report")
         canvas.drawRightString(landscape(letter)[0] - doc.rightMargin, 9, f"Page {document.page}")
         canvas.restoreState()
 
@@ -2141,7 +2141,7 @@ def comparison_report_bytes() -> bytes:
 # =============================================================================
 
 with st.sidebar:
-    st.markdown('<div class="sidebar-brand">Wall Assembly Embodied Carbon Calculator</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sidebar-brand">Wall-E</div>', unsafe_allow_html=True)
     page_options = ["Build Assemblies", "Compare Assemblies", "Material Library", "Definitions", "Method Guide"]
     page = st.radio(
         "Navigation",
@@ -2179,7 +2179,7 @@ if page == "Build Assemblies":
     st.markdown(
         """
         <div class="hero">
-          <h1>Wall Assembly Embodied Carbon Calculator</h1>
+          <h1>Wall-E</h1>
         </div>
         """,
         unsafe_allow_html=True,
