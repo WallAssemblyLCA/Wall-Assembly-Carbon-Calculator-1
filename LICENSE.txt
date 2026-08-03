@@ -1,0 +1,21 @@
+WALL-E PROPRIETARY NOTICE
+
+© 2026 Studio G Architects. All rights reserved.
+
+Wall-E, its original source code, interface, page layouts, report templates,
+graphics, and original arrangement and presentation of results are proprietary
+to Studio G Architects to the extent protected by applicable law.
+
+Unauthorized copying, modification, distribution, publication, sublicensing,
+or commercial use of the proprietary portions of Wall-E is prohibited without
+prior written permission from Studio G Architects, except where applicable law
+permits otherwise.
+
+Third-party software, environmental product declarations (EPDs), product data,
+trademarks, and other third-party materials remain subject to their respective
+owners' rights and licenses. Nothing in this notice transfers ownership of
+third-party materials to Studio G Architects.
+
+Calculation results depend on user inputs and source data and are provided for
+design comparison only. They are not a certified life-cycle assessment or a
+substitute for project-specific professional review.
