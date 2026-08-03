@@ -1,0 +1,107 @@
+# Wall Assembly Embodied Carbon Calculator
+
+## Files
+
+- `app.py` — complete Streamlit application
+- `requirements.txt` — Python dependencies
+- `.streamlit/config.toml` — Streamlit theme configuration
+
+## Deploy on Streamlit Community Cloud
+
+1. Upload all files and the `.streamlit` folder to your GitHub repository.
+2. Commit the changes.
+3. Deploy `app.py` through Streamlit Community Cloud.
+4. Existing deployed apps should update automatically after the GitHub commit.
+
+## Changes in this version
+
+- Fixed the Build Assemblies wall selector so choosing another wall (for example, Wall 1 while editing Wall 4) immediately opens the selected wall instead of snapping back to the previous wall.
+- Added compact up/down arrow buttons beside New to reorder the selected wall option in the Build Assemblies dropdown.
+- Added a compact Saved walls popover on the Build Assemblies page. It can save the current complete wall, add a saved wall back as a new editable option, or delete a saved wall.
+- Saved walls include dimensions, layers, material selections, custom EPD values, and all installation/calculation inputs.
+- Saved walls persist in the current browser using local storage. Saving another wall with the same name updates that saved wall instead of creating a duplicate.
+- Forced the Build Assemblies Material contribution legend to follow the visible top-to-bottom bar order by explicitly reordering Plotly traces and assigning legend ranks.
+- Updated all Compare Assemblies charts with larger legend text and larger numeric value labels.
+- Matched the Material Breakdown legend order to the visible top-to-bottom stacked-bar order.
+- Updated `kgCO₂e/unit` materials so horizontal and vertical spacing are each optional. Users select Yes or No for each direction and only enter spacing for the directions that apply.
+- Removed the extra-items input from `kgCO₂e/unit` calculations.
+- Removed the extra-runs input from `kgCO₂e/m` calculations.
+- Added a downloadable PDF comparison report containing the results table, all Compare Assemblies diagrams, and detailed material results for every wall option.
+- Removed project JSON upload and download controls.
+- Kept the formatted Excel export.
+- Changed emitted and net carbon intensity to `kgCO₂e/m²` throughout the app and Excel export.
+- Added persistent browser storage for reusable custom materials.
+- Added Add, Edit, and Remove controls for custom materials. Preset materials remain read-only.
+- Added a Definitions page explaining A1–A3, the selected scope, stored/biogenic carbon, net carbon, carbon intensity, and net intensity.
+- Updated the wall-layer order to:
+  1. Exterior Cladding
+  2. Attachment System
+  3. Moisture and Air Control
+  4. Sheathing
+  5. Insulation
+  6. Stud and Framing
+  7. Interior Finishes
+- Improved the open-sidebar collapse-arrow contrast.
+
+## Saved-wall storage
+
+Saved full-wall assemblies are stored in the current browser using local storage. They remain after a page refresh or after returning to the app in the same browser. They are not automatically shared with a different browser or device, and clearing browser site data will remove them.
+
+Use **Saved walls** beside the wall-option controls to:
+
+- Save or update the current full wall.
+- Add a saved wall as a new, independently editable wall option.
+- Delete a saved wall template without deleting wall options already added to the project.
+
+
+## Custom-material storage
+
+Custom materials are stored in the current browser using local storage. They remain after a page refresh or after returning to the app in the same browser. They are not automatically shared with a different browser or device, and clearing browser site data will remove them.
+
+
+## Automatic formula selection
+
+Custom materials no longer require a calculation-method selection. The app derives the formula from the EPD declared unit:
+
+- kgCO₂e/m² → wall area
+- kgCO₂e/m³ → wall area × thickness
+- kgCO₂e/kg → total mass or wall area × grammage
+- kgCO₂e/m → total installed linear length
+- kgCO₂e/unit → installed item count
+- kgCO₂e/m² at R/RSI → wall area adjusted to the required R-value
+
+Preset wood and steel framing products retain their specialized spacing and gauge/size formulas.
+
+
+## Definitions update
+
+The Definitions page now includes:
+- RSI and R-value meanings and conversion formulas
+- The EPD declared unit and where to locate it in an EPD
+- Revised stored/biogenic carbon wording
+
+
+## Additional material source
+
+The Material Library page includes a “Looking for more materials?” callout linking directly to 2050 Materials.
+
+## Studio G Architects branding and ownership
+
+This package includes Studio G Architects branding throughout Wall-E:
+
+- The Studio G Architects logo appears in the sidebar, every page hero, the page footer, interactive charts, every Excel worksheet, and every PDF report page.
+- The copyright notice appears in the source code, application pages, chart graphics, Excel exports, PDF exports, CSV exports, and file metadata.
+- A dedicated **Legal Notice** page is included in the application.
+- `LICENSE.txt` contains the proprietary-use notice and the third-party-materials carveout.
+
+Required branding asset:
+
+- `assets/studio_g_logo.jpg`
+
+Keep the `assets` folder beside `app.py` when deploying. Removing or renaming the logo file will prevent the logo from appearing in the application and exports.
+
+### Ownership notice
+
+© 2026 Studio G Architects. All rights reserved.
+
+Wall-E, its original source code, interface, page layouts, report templates, graphics, and original arrangement and presentation of results are proprietary to Studio G Architects to the extent protected by applicable law. Third-party software, EPDs, product data, trademarks, and other third-party materials remain subject to their respective owners' rights and licenses.
