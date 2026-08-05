@@ -1,13 +1,13 @@
-WALL-E PROPRIETARY NOTICE
+Strata PROPRIETARY NOTICE
 
 © Studio G Architects. All rights reserved.
 
-Wall-E, its original source code, interface, page layouts, report templates,
+Strata, its original source code, interface, page layouts, report templates,
 graphics, and original arrangement and presentation of results are proprietary
 to Studio G Architects to the extent protected by applicable law.
 
 Unauthorized copying, modification, distribution, publication, sublicensing,
-or commercial use of the proprietary portions of Wall-E is prohibited without
+or commercial use of the proprietary portions of Strata is prohibited without
 prior written permission from Studio G Architects, except where applicable law
 permits otherwise.
 
