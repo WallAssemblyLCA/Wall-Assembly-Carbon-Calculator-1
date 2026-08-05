@@ -1,6 +1,6 @@
 # Copyright (c) Studio G Architects. All rights reserved.
 #
-# Wall-E and the original source code, interface, report templates, graphics,
+# Strata and the original source code, interface, report templates, graphics,
 # page layouts, and original arrangement and presentation of results in this
 # application are proprietary to Studio G Architects to the extent protected by
 # applicable law. Unauthorized copying, modification, distribution, publication,
@@ -1521,7 +1521,7 @@ def resolve_logo_path() -> Path | None:
 LOGO_PATH = resolve_logo_path()
 COPYRIGHT_SHORT = "© Studio G Architects. All rights reserved."
 PROPRIETARY_NOTICE = (
-    "Wall-E, its original source code, interface, page layouts, report templates, graphics, "
+    "Strata, its original source code, interface, page layouts, report templates, graphics, "
     "and original arrangement and presentation of results are proprietary to Studio G Architects "
     "to the extent protected by applicable law. Unauthorized copying, modification, distribution, "
     "publication, sublicensing, or commercial use is prohibited without prior written permission."
@@ -1547,7 +1547,7 @@ def logo_data_uri() -> str | None:
 LOGO_DATA_URI = logo_data_uri()
 
 st.set_page_config(
-    page_title="Wall-E | Studio G Architects",
+    page_title="Strata | Studio G Architects",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -3862,15 +3862,15 @@ def workbook_bytes() -> bytes:
     wb = Workbook()
     wb.properties.creator = "Studio G Architects"
     wb.properties.lastModifiedBy = "Studio G Architects"
-    wb.properties.title = "Wall-E Wall Assembly Embodied Carbon Results"
+    wb.properties.title = "Strata Wall Assembly Embodied Carbon Results"
     wb.properties.subject = "A1-A3 wall assembly embodied carbon comparison"
     wb.properties.description = COPYRIGHT_SHORT + " " + PROPRIETARY_NOTICE
-    wb.properties.keywords = "Wall-E, Studio G Architects, embodied carbon, A1-A3"
+    wb.properties.keywords = "Strata, Studio G Architects, embodied carbon, A1-A3"
     wb.properties.category = "Studio G Architects proprietary results"
 
     summary = wb.active
     summary.title = "Assembly Comparison"
-    add_excel_branding(summary, "Wall-E - Assembly Comparison")
+    add_excel_branding(summary, "Strata - Assembly Comparison")
 
     headers = [
         "Assembly", "Width (ft)", "Height (ft)", "Area (ft²)", "Materials Ready",
@@ -3895,7 +3895,7 @@ def workbook_bytes() -> bytes:
         summary_row += 1
 
         ws = wb.create_sheet(safe_sheet_name(assembly["name"], used_names))
-        add_excel_branding(ws, f'Wall-E - {assembly["name"]}')
+        add_excel_branding(ws, f'Strata - {assembly["name"]}')
         ws["A5"], ws["B5"] = "Assembly", assembly["name"]
         ws["A6"], ws["B6"] = "Width (ft)", assembly["width_ft"]
         ws["A7"], ws["B7"] = "Height (ft)", assembly["height_ft"]
@@ -3939,7 +3939,7 @@ def workbook_bytes() -> bytes:
         ws.column_dimensions["P"].width = 38
 
     library = wb.create_sheet("Material Library")
-    add_excel_branding(library, "Wall-E - Material Library")
+    add_excel_branding(library, "Strata - Material Library")
     library_headers = ["Category", "Material", "Emitted A1–A3", "Stored Carbon", "Declared Unit", "Method", "Source", "Source Declared Unit"]
     for col, value in enumerate(library_headers, 1):
         library.cell(5, col, value)
@@ -3958,7 +3958,7 @@ def workbook_bytes() -> bytes:
     library.column_dimensions["H"].width = 38
 
     legal = wb.create_sheet("Legal Notice")
-    add_excel_branding(legal, "Wall-E - Legal and Ownership Notice")
+    add_excel_branding(legal, "Strata - Legal and Ownership Notice")
     legal.merge_cells("A5:J5")
     legal["A5"] = COPYRIGHT_SHORT
     legal["A5"].font = Font(size=14, bold=True, color="002F65")
@@ -4149,10 +4149,10 @@ def comparison_report_bytes() -> bytes:
         rightMargin=0.45 * inch,
         topMargin=0.42 * inch,
         bottomMargin=0.62 * inch,
-        title="Wall-E Wall Assembly Embodied Carbon Report",
+        title="Strata Wall Assembly Embodied Carbon Report",
         author="Studio G Architects",
         subject="Proprietary A1-A3 wall assembly embodied carbon comparison report",
-        creator="Wall-E by Studio G Architects",
+        creator="Strata by Studio G Architects",
     )
 
     styles = getSampleStyleSheet()
@@ -4247,7 +4247,7 @@ def comparison_report_bytes() -> bytes:
             Spacer(1, 5),
         ])
     story.extend([
-        Paragraph("Wall-E Wall Assembly Embodied Carbon Report", title_style),
+        Paragraph("Strata Wall Assembly Embodied Carbon Report", title_style),
         Paragraph(
             pdf_safe_text(
                 f"A1-A3 comparison generated {generated_at}. Emitted carbon and stored carbon are shown separately; net carbon equals emitted plus stored carbon."
@@ -4451,9 +4451,9 @@ def comparison_report_bytes() -> bytes:
     def add_footer(canvas, document) -> None:
         canvas.saveState()
         page_width = landscape(letter)[0]
-        canvas.setTitle("Wall-E Wall Assembly Embodied Carbon Report")
+        canvas.setTitle("Strata Wall Assembly Embodied Carbon Report")
         canvas.setAuthor("Studio G Architects")
-        canvas.setCreator("Wall-E by Studio G Architects")
+        canvas.setCreator("Strata by Studio G Architects")
         canvas.setSubject("Proprietary A1-A3 wall assembly embodied carbon comparison report")
         canvas.setStrokeColor(rl_colors.HexColor(COLORS["line"]))
         canvas.line(doc.leftMargin, 31, page_width - doc.rightMargin, 31)
@@ -4481,7 +4481,7 @@ def comparison_report_bytes() -> bytes:
 # =============================================================================
 
 with st.sidebar:
-    st.markdown('<div class="sidebar-brand">Wall-E<br><span style="font-size:0.82rem;font-weight:500;opacity:0.82;">Wall Assembly Embodied Carbon Calculator</span></div>', unsafe_allow_html=True)
+    st.markdown('<div class="sidebar-brand">Strata<br><span style="font-size:0.82rem;font-weight:500;opacity:0.82;">Wall Assembly Embodied Carbon Calculator</span></div>', unsafe_allow_html=True)
     page_options = ["Build Assemblies", "Compare Assemblies", "Material Library", "Studio G Library", "Definitions", "Method Guide"]
     page = st.radio(
         "Navigation",
@@ -4521,7 +4521,7 @@ if page == "Build Assemblies":
         st.toast(saved_wall_notice)
 
     render_page_hero(
-        "Wall-E",
+        "Strata",
         "Wall Assembly Embodied Carbon Calculator by Studio G Architects.",
     )
 
