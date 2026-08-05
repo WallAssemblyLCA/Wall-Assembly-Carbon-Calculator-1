@@ -1,4 +1,4 @@
-# Wall-E — Wall Assembly Embodied Carbon Calculator
+# Strata — Wall Assembly Embodied Carbon Calculator
 
 © 2026 Studio G Architects. All rights reserved.
 
@@ -45,7 +45,7 @@ Uploading the files to GitHub is not enough for the shared database. Complete St
 1. Go to Supabase and sign in.
 2. Select **New project**.
 3. Choose the Studio G organization or create one.
-4. Enter a project name such as `wall-e-studio-g`.
+4. Enter a project name such as `Strata-studio-g`.
 5. Create and safely store the Supabase database password.
 6. Choose the nearest region.
 7. Create the project and wait for setup to finish.
@@ -81,7 +81,7 @@ A legacy `service_role` key also works, but the newer `sb_secret_` key is prefer
 ### For an existing deployed app
 
 1. Open Streamlit Community Cloud.
-2. Open the Wall-E app.
+2. Open the Strata app.
 3. Open the app's **Settings** or **Manage app** menu.
 4. Open **Secrets**.
 5. Paste the following, replacing all three values:
@@ -121,13 +121,13 @@ Paste the same TOML block into the **Secrets** field under **Advanced settings**
 
 # Test after deployment
 
-1. Open Wall-E in a private/incognito browser window.
+1. Open Strata in a private/incognito browser window.
 2. Confirm that **Build Assemblies**, **Compare Assemblies**, **Material Library**, **Definitions**, and **Method Guide** work without a password.
 3. Open **Studio G Library**.
 4. Enter an incorrect password and confirm access is denied.
 5. Enter the correct password.
 6. Under **Shared Materials**, create a small test material.
-7. Open Wall-E in a second browser or computer, unlock Studio G Library, and confirm the test material appears.
+7. Open Strata in a second browser or computer, unlock Studio G Library, and confirm the test material appears.
 8. Copy the test material to that browser and confirm it appears in the public Material Library and wall material dropdowns.
 9. Create or rename a wall, save it under **Shared Wall Assemblies**, and confirm it can be loaded from the second browser.
 10. Delete the test items when finished.
