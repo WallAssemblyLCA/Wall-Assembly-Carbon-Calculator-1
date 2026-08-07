@@ -2772,8 +2772,8 @@ def update_custom_material_references(old_name: str, new_name: str | None) -> No
 # PASSWORD-PROTECTED STUDIO G SHARED LIBRARY
 # =============================================================================
 
-STUDIO_G_MATERIALS_TABLE = "wall_e_materials"
-STUDIO_G_WALLS_TABLE = "wall_e_assemblies"
+STUDIO_G_MATERIALS_TABLE = "Strata_materials"
+STUDIO_G_WALLS_TABLE = "Strata_assemblies"
 STUDIO_G_REQUEST_TIMEOUT_SECONDS = 20
 
 
